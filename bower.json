@@ -1,0 +1,16 @@
+{
+  "name": "fs-angular-bodyroute",
+  "description": "",
+  "main": [
+    "dist/bodyroute.js"
+  ],
+  "authors": [
+    "Firestitch Inc."
+  ],
+  "license": "MIT",
+  "ignore": [
+    "src",
+    ".gitignore"
+  ],
+  "private": false
+}
