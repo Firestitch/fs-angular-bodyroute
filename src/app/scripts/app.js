@@ -58,8 +58,8 @@ angular
 
     $mdThemingProvider.alwaysWatchTheme(true);
 })
-.run(function ($rootScope, bodyrouteService) {
+.run(function ($rootScope, fsBodyroute) {
 
-    bodyrouteService.init();
+    fsBodyroute.init({ target: $rootScope, event: '$routeChangeSuccess' });
 
 });
