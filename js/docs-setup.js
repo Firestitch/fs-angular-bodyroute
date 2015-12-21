@@ -9,7 +9,7 @@ NG_DOCS={
       "shortName": "fsBodyroute",
       "type": "interface",
       "moduleName": "fs-angular-bodyroute",
-      "keywords": "api fs-angular-bodyroute interface services"
+      "keywords": "$rootscope $routechangesuccess api body configure event fs-angular-bodyroute interface method options route services target"
     }
   ],
   "apis": {
