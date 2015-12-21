@@ -22,6 +22,14 @@
  
         return { init: init };
 
+        /**
+         * @ngdoc method
+         * @name init
+         * @methodOf fs-angular-bodyroute.services:fsBodyroute
+         * @param {object} options The options to configure the body route
+         * @param {object} options.target ie: $rootScope
+         * @param {string} options.event ie: $routeChangeSuccess
+         */
         function init(options) {
 
             var options = options || {};
