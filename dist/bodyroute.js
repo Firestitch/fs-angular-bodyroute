@@ -1,16 +1,16 @@
 (function () {
-    'use strict';
-    
-	angular.module('fs-angular-bodyroute',[]);
+    'use strict';
+    
+	angular.module('fs-angular-bodyroute',[]);
 
-})();
-(function () {
-    'use strict';
+})();
+(function () {
+    'use strict';
 
 
-})();
+})();
 
-(function () {
+(function () {
     'use strict';
 
     /**
@@ -46,7 +46,7 @@
         }
 
         function apply() {
-            var parts = $location.path().replace(/^\//,'').split("/");
+            var parts = $location.path().replace(/\d+\//,'').replace(/^\//,'').split("/");
 
             if(!parts.length)
                 parts = ['index'];
@@ -70,12 +70,13 @@
     });
 
 })();
+
+angular.module('fs-angular-bodyroute').run(['$templateCache', function($templateCache) {
+  'use strict';
+
+  $templateCache.put('views/directives/directive.html',
+    ""
+  );
+
+}]);
 
-angular.module('fs-angular-bodyroute').run(['$templateCache', function($templateCache) {
-  'use strict';
-
-  $templateCache.put('views/directives/directive.html',
-    ""
-  );
-
-}]);

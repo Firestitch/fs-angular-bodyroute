@@ -34,7 +34,7 @@
         }
 
         function apply() {
-            var parts = $location.path().replace(/^\//,'').split("/");
+            var parts = $location.path().replace(/\d+\//,'').replace(/^\//,'').split("/");
 
             if(!parts.length)
                 parts = ['index'];
