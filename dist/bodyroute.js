@@ -40,13 +40,18 @@
             if(!options.event)
                 throw 'Invalid body route event';
 
-            options.target.$on(options.event, function(event, toState) { 
+            options.target.$on(options.event, function(event, state) { 
                 apply();
             });
         }
 
-        function apply() {
-            var parts = $location.path().replace(/\d+\//,'').replace(/^\//,'').split("/");
+        function apply(state) {
+          
+            if(state.data && state.data.bodyRoute && state.data.bodyRoute.name) {
+                var parts = state.data.bodyRoute.name.split('-');
+            } else { 
+                var parts = $location.path().replace(/\d+\//,'').replace(/^\//,'').split("/");
+            }
 
             if(!parts.length)
                 parts = ['index'];
