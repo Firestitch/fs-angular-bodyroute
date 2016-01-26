@@ -41,7 +41,7 @@
                 throw 'Invalid body route event';
 
             options.target.$on(options.event, function(event, state) { 
-                apply();
+                apply(state);
             });
         }
 
