@@ -38,7 +38,7 @@
             if(state.data && state.data.bodyRoute && state.data.bodyRoute.name) {
                 var parts = state.data.bodyRoute.name.split('-');
             } else { 
-                var parts = $location.path().replace(/\d+\//,'').replace(/^\//,'').split("/");
+                var parts = $location.path().replace(/\/\d+/g,'').replace(/(^\/|\/$)/,'').split("/");
             }
 
             if(!parts.length)
