@@ -29,7 +29,7 @@
                 throw 'Invalid body route event';
 
             options.target.$on(options.event, function(event, state) { 
-                apply();
+                apply(state);
             });
         }
 
@@ -38,7 +38,7 @@
             if(state.data && state.data.bodyRoute && state.data.bodyRoute.name) {
                 var parts = state.data.bodyRoute.name.split('-');
             } else { 
-                var parts = $location.path().replace(/\/\d+/g,'').replace(/(^\/|\/$)/,'').split("/");
+                var parts = $location.path().replace(/\/\[0-9a-f]+/g,'').replace(/(^\/|\/$)/,'').split("/");
             }
 
             if(!parts.length)
