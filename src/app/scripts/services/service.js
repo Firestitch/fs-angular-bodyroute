@@ -2,8 +2,8 @@
     'use strict';
 
     /**
-     * @ngdoc interface
-     * @name fs-angular-bodyroute.services:fsBodyroute
+     * @ngdoc service
+     * @name app.services:fsBodyroute
     */
     angular.module('fs-angular-bodyroute')
     .factory('fsBodyroute', function ($location) {
@@ -13,7 +13,7 @@
         /**
          * @ngdoc method
          * @name init
-         * @methodOf fs-angular-bodyroute.services:fsBodyroute
+         * @methodOf app.services:fsBodyroute
          * @param {object} options The options to configure the body route
          * @param {object} options.target ie: $rootScope
          * @param {string} options.event ie: $routeChangeSuccess
