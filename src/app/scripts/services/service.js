@@ -3,7 +3,7 @@
 
     /**
      * @ngdoc service
-     * @name app.services:fsBodyroute
+     * @name services.fsBodyroute
     */
     angular.module('fs-angular-bodyroute')
     .factory('fsBodyroute', function ($location) {
@@ -13,7 +13,7 @@
         /**
          * @ngdoc method
          * @name init
-         * @methodOf app.services:fsBodyroute
+         * @methodOf services.fsBodyroute
          * @param {object} options The options to configure the body route
          * @param {object} options.target ie: $rootScope
          * @param {string} options.event ie: $routeChangeSuccess
