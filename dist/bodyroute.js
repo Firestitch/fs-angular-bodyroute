@@ -1,14 +1,5 @@
-(function () {
-    'use strict';
-    
-	angular.module('fs-angular-bodyroute',[]);
-
-})();
-(function () {
-    'use strict';
 
 
-})();
 
 (function () {
     'use strict';
@@ -17,9 +8,9 @@
      * @ngdoc interface
      * @name fs-angular-bodyroute.services:fsBodyroute
     */
-    angular.module('fs-angular-bodyroute')
-    .factory('fsBodyroute', function ($location) {
- 
+    angular.module('fs-angular-bodyroute',[])
+    .factory('fsBodyroute', function ($location,$rootScope) {
+
         return { init: init };
 
         /**
@@ -33,14 +24,14 @@
         function init(options) {
 
             var options = options || {};
-            
+
             if(!options.target)
-                throw 'Invalid body route target';
+                options.target = $rootScope;
 
             if(!options.event)
-                throw 'Invalid body route event';
+                options.event = '$stateChangeSuccess';
 
-            options.target.$on(options.event, function(event, state) { 
+            options.target.$on(options.event, function(event, state) {
                 apply(state);
             });
         }
@@ -49,8 +40,8 @@
 
             if(state.data && state.data.bodyRoute && state.data.bodyRoute.name) {
                 var parts = state.data.bodyRoute.name.split('-');
-            } else { 
-                var parts = $location.path().replace(/\/\d+/g,'').replace(/(^\/|\/$)/,'').split("/");
+            } else {
+                var parts = $location.path().replace(/\/\d+(\/|$)/g,'').replace(/(^\/|\/$)/,'').split("/");
             }
 
             if(!parts.length)
@@ -69,13 +60,12 @@
             angular.forEach(parts,function(name) {
                 body.addClass(namespace + name);
                 namespace += name + '-';
-            });            
-        }        
-    
+            });
+        }
+
     });
 
 })();
-
 angular.module('fs-angular-bodyroute').run(['$templateCache', function($templateCache) {
   'use strict';
 
