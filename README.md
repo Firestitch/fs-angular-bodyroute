@@ -1,1 +1,1 @@
-http://firestitch.github.io/fs-angular-bodyroute
+Documentation http://docs.firestitch.com
