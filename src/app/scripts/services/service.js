@@ -94,7 +94,10 @@
 
             });
 
-
+            if(state.data.bodyClass) {
+                body.addClass(state.data.bodyClass);
+            }
+          
             var namespace = 'body-';
 
             angular.forEach(parts,function(name) {
